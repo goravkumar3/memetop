@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.usersPosts{
+    display: flex;
+    padding: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.card{
+    background-color: aliceblue;
+    width: 20%;
+    height: auto;
+}
+.card img{
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+.card h1{
+margin-left: 10px;
+}

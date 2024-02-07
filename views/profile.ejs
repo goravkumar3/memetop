@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profileDetail">
+            <div class="profileimage">
+                <h1><%let nameArray=[...user.fullname]
+                    let firstName=nameArray[0]
+                    %>
+                <%=firstName%>
+                </h1>
+            </div>
+            <div class="userIntro">
+            <h1><%=user.fullname %></h1>
+            <h3>@<%=user.username %></h3>
+        </div>
+        <div class="share">
+            <a href="/logout">Log out</a>
+        </div>
+        </div>
+        <div class="pins">
+            <div class="btns">
+                <a href="/creatememe">Create new</a>
+            </div>
+            <hr />
+            <div class="postCards">
+                <%if(user.posts.length===0){%>
+                        <h1>
+                          There are no posts at the moment
+                        </h1>
+                      <%}%>
+                <% user.posts.map((v)=>{%>
+                    <div class="card">
+                    <img src="/images/uploads/<%=v.files%>" alt="file">
+                    <h1><%=v.title%></h1>
+                </div>
+                    <%})%>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
